@@ -66,7 +66,8 @@
             android:textColor="#222020"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#00BCD4" />
 
         <TextView
             android:id="@+id/textView9"
@@ -110,7 +111,8 @@
             android:textColor="#0E0E0E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#00BCD4" />
 
         <TextView
             android:id="@+id/textView11"
@@ -154,7 +156,8 @@
             android:textColor="#0E0E0E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#00BCD4" />
 
         <TextView
             android:id="@+id/textView13"
@@ -220,7 +223,8 @@
             android:textColor="#101010"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#00BCD4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

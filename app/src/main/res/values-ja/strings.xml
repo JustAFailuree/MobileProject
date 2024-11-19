@@ -37,4 +37,8 @@
     <string name="image1">写真</string>
     <string name="list1">リスト</string>
     <string name="list">リスト</string>
+    <string name="listBTN1">リスト</string>
+    <string name="listBTN2">地図</string>
+    <string name="listBTN3">画像</string>
+    <string name="AddFormBTN">追加</string>
 </resources>

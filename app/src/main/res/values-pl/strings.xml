@@ -37,4 +37,8 @@
     <string name="image1">Zdjęcie</string>
     <string name="list1">Lista</string>
     <string name="list">Lista</string>
+    <string name="listBTN1">Lista</string>
+    <string name="listBTN2">Mapa</string>
+    <string name="listBTN3">Zdjęcia</string>
+    <string name="AddFormBTN">Dodaj</string>
 </resources>

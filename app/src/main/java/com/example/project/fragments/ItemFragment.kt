@@ -1,5 +1,6 @@
 package com.example.project.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -8,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import com.example.project.R
+import com.example.project.data.Contact
 import com.example.project.fragments.placeholder.PlaceholderContent
 
 /**
@@ -17,6 +21,20 @@ import com.example.project.fragments.placeholder.PlaceholderContent
 class ItemFragment : Fragment() {
 
     private var columnCount = 1
+    private var contactList: List<Contact> = listOf()
+
+
+    private val myImages = listOf(
+        R.drawable.ob1,
+        R.drawable.ob2,
+        R.drawable.ob3,
+        R.drawable.ob4,
+        R.drawable.ob5,
+        R.drawable.ob6,
+        R.drawable.ob7,
+        R.drawable.ob8,
+        R.drawable.ob9,
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +44,7 @@ class ItemFragment : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,10 +58,70 @@ class ItemFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                contactList = createContactList()
+                adapter = MyItemRecyclerViewAdapter(contactList)
+
+                //val userName : EditText = findViewById(R.id.AddName)
+                //val UserNumber : EditText = findViewById(R.id.AddNumber)
+                //val AddButton : Button = findViewById(R.id.AddUserInfo)
+
+
+
+                //AddButton.setOnClickListener {
+                   // val name = userName.text.toString()
+                   // val pnumber = UserNumber.text.toString()
+                    //val newContact = Contact(name, pnumber, randomImage())
+                   //addContact(newContact)
+                //}
+
             }
         }
         return view
+    }
+
+    private fun createContactList(): List<Contact> = buildList<Contact> {
+        for(i in 1..5) {
+            val name = "Użytkownik ${i}"
+            val number  = randomPhoneNumber()
+            val image = randomImage()
+
+            val newContact = Contact(name, number, image)
+            add(newContact)
+        }
+    }
+
+    private fun addContact(contact: Contact){
+        val list = contactList.toMutableList()
+        list.add(contact)
+        contactList = list
+    }
+
+    private fun randomPhoneNumber(): String {
+        var number = "+"
+        number += randomNumber(2)
+        number += " "
+        number += randomNumber(3)
+        number += " "
+        number += randomNumber(3)
+        number += " "
+        number += randomNumber(3)
+
+        return number
+
+    }
+
+    private fun randomNumber(n: Int): Any? {
+        var number =""
+        for(i in 1..n){
+            number += "${(0..9).random()}"
+        }
+        return number
+    }
+
+    private fun randomImage(): Int {
+        val i =(0..<9).random()
+
+        return myImages[i]
     }
 
     companion object {
