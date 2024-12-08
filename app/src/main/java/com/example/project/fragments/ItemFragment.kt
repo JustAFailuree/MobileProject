@@ -60,20 +60,6 @@ class ItemFragment : Fragment() {
                 }
                 contactList = createContactList()
                 adapter = MyItemRecyclerViewAdapter(contactList)
-
-                //val userName : EditText = findViewById(R.id.AddName)
-                //val UserNumber : EditText = findViewById(R.id.AddNumber)
-                //val AddButton : Button = findViewById(R.id.AddUserInfo)
-
-
-
-                //AddButton.setOnClickListener {
-                   // val name = userName.text.toString()
-                   // val pnumber = UserNumber.text.toString()
-                    //val newContact = Contact(name, pnumber, randomImage())
-                   //addContact(newContact)
-                //}
-
             }
         }
         return view
